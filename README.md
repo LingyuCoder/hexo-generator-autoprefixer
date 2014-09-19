@@ -21,11 +21,12 @@ autoprefixer:
   browsers:
     - '> 1%'
     - 'last 2 versions'
+  safe: true
 ```
 
 * enable: should autoprefix enabled
 * debug: should show log
 * cascade: should Autoprefixer uses Visual Cascade, if CSS will be uncompressed
 * browsers: list of browsers, which are supported in your project
-
+* safe: enables Safe Mode(a special safe mode to parse broken CSS) in PostCSS. By default false
 

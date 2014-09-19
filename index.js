@@ -3,7 +3,10 @@ var path = require('path');
 var config = hexo.config;
 var apconfig = config.autoprefixer;
 var autoprefixer = require('autoprefixer-core');
-
+var processor = autoprefixer({
+    browsers: apconfig.browsers,
+    cascade: apconfig.cascade
+});
 
 var dbg = apconfig.debug ? function(message) {
     console.log('[' + 'autoprefixer'.green + ']: ' + message);
@@ -17,7 +20,9 @@ function process(file) {
         dbg(file + ' start');
         var encoding = apconfig.encoding || 'utf-8';
         var content = fs.readFileSync(file, encoding);
-        fs.writeFileSync(file, autoprefixer.process(content, apconfig.browsers).css, encoding);
+        fs.writeFileSync(file, processor.process(content, {
+            safe: apconfig.safe
+        }).css, encoding);
         dbg(file + ' end');
     } catch (e) {
         console.error('[' + 'Autoprefixer Error'.red + ']: ' + file + '\n' + e.message);
