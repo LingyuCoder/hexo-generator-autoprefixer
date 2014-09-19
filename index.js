@@ -17,7 +17,7 @@ function process(file) {
         dbg(file + ' start');
         var encoding = apconfig.encoding || 'utf-8';
         var content = fs.readFileSync(file, encoding);
-        fs.writeFileSync(file, autoprefixer.process(content, apconfig.option).css, encoding);
+        fs.writeFileSync(file, autoprefixer.process(content, apconfig.browsers).css, encoding);
         dbg(file + ' end');
     } catch (e) {
         console.error('[' + 'Autoprefixer Error'.red + ']: ' + file + '\n' + e.message);

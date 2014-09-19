@@ -1,14 +1,28 @@
 {
   "name": "hexo-generator-autoprefixer",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Hexo-generator-autoprefixer\r ===========================",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "skyinlayer",
+  "license": "MIT",
   "dependencies": {
     "autoprefixer-core": "^3.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LingyuCoder/hexo-generator-autoprefixer.git"
+  },
+  "keywords": [
+    "hexo",
+    "generator",
+    "plugin",
+    "autoprefixer"
+  ],
+  "bugs": {
+    "url": "https://github.com/LingyuCoder/hexo-generator-autoprefixer/issues"
+  },
+  "homepage": "https://github.com/LingyuCoder/hexo-generator-autoprefixer"
 }
