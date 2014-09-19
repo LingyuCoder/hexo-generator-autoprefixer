@@ -20,7 +20,7 @@ autoprefixer:
   cascade: false
   browsers:
     - '> 1%'
-    - ''last 2 versions'
+    - 'last 2 versions'
 ```
 
 * enable: should autoprefix enabled
