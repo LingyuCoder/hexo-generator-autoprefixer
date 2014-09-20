@@ -35,7 +35,6 @@ function walk(dir) {
     }
     var files = fs.readdirSync(dir);
     files.forEach(function(fileName) {
-
         var curPath = path.join(dir, fileName);
         var stats = fs.statSync(curPath);
         if (stats.isFile()) {

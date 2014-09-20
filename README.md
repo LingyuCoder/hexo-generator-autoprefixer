@@ -1,9 +1,7 @@
 Hexo-generator-autoprefixer
 ===========================
 
-This is a hexo generator plugin. 
-
-It will parse CSS and add vendor prefixes using values from [Can I Use](http://caniuse.com) after `hexo generate` with [Autoprefixer](https://www.npmjs.org/package/autoprefixer-core)
+This is a hexo generator plugin. It will parse CSS and add vendor prefixes using values from [Can I Use](http://caniuse.com) after `hexo generate` with [Autoprefixer](https://www.npmjs.org/package/autoprefixer-core)
 
 #Install
 ```
