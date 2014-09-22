@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var config = hexo.config;
-var apconfig = config.autoprefixer;
+var apconfig = config.autoprefixer || {};
 var autoprefixer = require('autoprefixer-core');
 var processor = autoprefixer({
     browsers: apconfig.browsers,
