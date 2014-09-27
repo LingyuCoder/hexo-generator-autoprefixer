@@ -1,6 +1,6 @@
 {
   "name": "hexo-generator-autoprefixer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Hexo-generator-autoprefixer",
   "main": "index.js",
   "scripts": {

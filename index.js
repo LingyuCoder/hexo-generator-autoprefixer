@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var config = hexo.config;
-var apconfig = config.autoprefixer || {};
+var apconfig = config.autoprefixer;
 var autoprefixer = require('autoprefixer-core');
 var processor = autoprefixer({
     browsers: apconfig.browsers,
@@ -35,6 +35,7 @@ function walk(dir) {
     }
     var files = fs.readdirSync(dir);
     files.forEach(function(fileName) {
+
         var curPath = path.join(dir, fileName);
         var stats = fs.statSync(curPath);
         if (stats.isFile()) {
@@ -46,7 +47,7 @@ function walk(dir) {
     return;
 }
 
-hexo.extend.generator.register('autoprefixer', function(locals, render, callback) {
+function run(locals, render, callback) {
     var time;
     if (!apconfig || !apconfig.enable) {
         dbg('autoprefixer disabled');
@@ -60,4 +61,12 @@ hexo.extend.generator.register('autoprefixer', function(locals, render, callback
     time = Date.now() - time;
     dbg('Files autoprefixed in ' + time + 'ms');
     callback();
-});
+}
+
+var generator = hexo.extend.generator;
+
+if (generator.register.length === 1) {
+    generator.register(run);
+} else {
+    generator.register('autoprefixer', run);
+}
